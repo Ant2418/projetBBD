@@ -449,7 +449,7 @@ create table PHOTOMETRE
 (
    ID_PHOTOMETRE        INTEGER              not null,
    ETAT_PHOTOTMETRE     VARCHAR2(50)         not null
-      constraint CKC_ETAT_PHOTOTMETRE_PHOTOMET check (ETAT_PHOTOTMETRE in ('operationnel','defaillant','<Val4>')),
+      constraint CKC_ETAT_PHOTOTMETRE_PHOTOMET check (ETAT_PHOTOTMETRE in ('operationnel','defaillant')),
    PRIX_PAR_PHOTO       NUMBER               not null
       constraint CKC_PRIX_PAR_PHOTO_PHOTOMET check (PRIX_PAR_PHOTO >= 0),
    constraint PK_PHOTOMETRE primary key (ID_PHOTOMETRE)
