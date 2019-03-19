@@ -336,7 +336,7 @@ create table HISTO_PHOTOMETRE
    HISTOPHOTOMETRE_TYPE VARCHAR2(25)         not null
       constraint CKC_HISTOPHOTOMETRE_T_HISTO_PH check (HISTOPHOTOMETRE_TYPE in ('creation','modifie','supprime')),
    HISTOPHOTOMETRE_ETAT VARCHAR2(50)         not null
-      constraint CKC_HISTOPHOTOMETRE_E_HISTO_PH check (HISTOPHOTOMETRE_ETAT in ('operationnel','defaillant','<Val4>')),
+      constraint CKC_HISTOPHOTOMETRE_E_HISTO_PH check (HISTOPHOTOMETRE_ETAT in ('operationnel','defaillant')),
    HISTOPHOTOMETRE_PRIX_PAR_PHOTO NUMBER               not null
       constraint CKC_HISTOPHOTOMETRE_P_HISTO_PH check (HISTOPHOTOMETRE_PRIX_PAR_PHOTO >= 0),
    constraint PK_HISTO_PHOTOMETRE primary key (ID_HISTOPHOTOMETRE)
