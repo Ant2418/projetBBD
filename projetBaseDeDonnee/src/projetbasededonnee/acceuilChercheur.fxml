@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -12,67 +12,84 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetbasededonnee.AcceuilChercheurController">
    <children>
-      <SplitPane dividerPositions="0.1" prefHeight="750.0" prefWidth="1000.0">
+      <SplitPane dividerPositions="0.05" prefHeight="750.0" prefWidth="1000.0">
          <items>
-            <VBox fx:id="menuVBox" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #979797;">
+            <VBox fx:id="menuVBox" alignment="TOP_CENTER" prefHeight="750.0" prefWidth="50.0" style="-fx-background-color: #979797;">
                <children>
-                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <VBox.margin>
                         <Insets bottom="20.0" top="20.0" />
                      </VBox.margin>
+                     <image>
+                        <Image url="@user.png" />
+                     </image>
                   </ImageView>
-                  <Button fx:id="logOutButton" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" text="Deconnexion">
+                  <ImageView fx:id="deconnexionIV" fitHeight="45.0" fitWidth="45.0" layoutX="10.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
                      <VBox.margin>
-                        <Insets bottom="5.0" top="10.0" />
+                        <Insets bottom="5.0" top="50.0" />
                      </VBox.margin>
-                  </Button>
-                  <Button fx:id="homeCButton" layoutX="20.0" layoutY="150.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" text="home">
+                     <image>
+                        <Image url="@power.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="deconnexionIV1" fitHeight="45.0" fitWidth="45.0" layoutX="13.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@home.png" />
+                     </image>
                      <VBox.margin>
                         <Insets bottom="5.0" top="5.0" />
                      </VBox.margin>
-                  </Button>
-                  <Button fx:id="addExpButton" layoutX="20.0" layoutY="240.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" text="addExp">
+                  </ImageView>
+                  <ImageView fx:id="deconnexionIV11" fitHeight="45.0" fitWidth="45.0" layoutX="13.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@flask.png" />
+                     </image>
                      <VBox.margin>
                         <Insets bottom="5.0" top="5.0" />
                      </VBox.margin>
-                  </Button>
+                  </ImageView>
                </children>
             </VBox>
             <BorderPane>
                <top>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="MES EXPERIENCES" BorderPane.alignment="CENTER">
-                     <font>
-                        <Font size="48.0" />
-                     </font>
-                     <BorderPane.margin>
-                        <Insets top="20.0" />
-                     </BorderPane.margin>
-                  </Text>
+                  <BorderPane prefHeight="100.0" prefWidth="942.0" BorderPane.alignment="CENTER">
+                     <center>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mes Expériences" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Text>
+                     </center>
+                  </BorderPane>
                </top>
                <center>
-                  <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-                    <columns>
-                      <TableColumn fx:id="numExpCol" prefWidth="50.0" text="N°" />
-                      <TableColumn fx:id="etatCol" prefWidth="100.0" text="Etat" />
-                        <TableColumn fx:id="labCol" prefWidth="160.0" text="Laborantin" />
-                        <TableColumn fx:id="typeExpCol" prefWidth="150.0" text="      Type&#10;d'expérience" />
-                        <TableColumn fx:id="dureeCol" prefWidth="75.0" text="Durée&#10;(min)" />
-                        <TableColumn fx:id="nupletCol" prefWidth="75.0" text="Nombre&#10;réplicat" />
-                        <TableColumn fx:id="puitCol" prefWidth="75.0" text="Nombre&#10;   puit" />
-                        <TableColumn fx:id="dateCol" prefWidth="75.0" text="Date">
-                           <columns>
-                              <TableColumn fx:id="debCol" prefWidth="75.0" text="début" />
-                              <TableColumn fx:id="finCol" prefWidth="75.0" text="fin" />
-                           </columns>
-                        </TableColumn>
-                    </columns>
+                  <AnchorPane prefHeight="633.0" prefWidth="933.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <TableView prefHeight="616.0" prefWidth="941.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
+                          <columns>
+                            <TableColumn fx:id="numExpCol" prefWidth="50.0" text="N°" />
+                              <TableColumn prefWidth="75.0" text="Nom" />
+                            <TableColumn fx:id="etatCol" prefWidth="100.0" text="Etat" />
+                              <TableColumn fx:id="labCol" prefWidth="142.66668701171875" text="Laborantin" />
+                              <TableColumn fx:id="typeExpCol" prefWidth="167.33331298828125" text="      Type&#10;d'expérience" />
+                              <TableColumn fx:id="dureeCol" prefWidth="75.0" text="Durée&#10;(min)" />
+                              <TableColumn fx:id="nupletCol" prefWidth="60.3333740234375" text="Nombre&#10;réplicat" />
+                              <TableColumn fx:id="puitCol" prefWidth="68.0" text="Nombre&#10;   puit" />
+                              <TableColumn fx:id="dateCol" prefWidth="154.0" text="Date">
+                                 <columns>
+                                    <TableColumn fx:id="debCol" prefWidth="75.0" text="début" />
+                                    <TableColumn fx:id="finCol" prefWidth="75.0" text="fin" />
+                                 </columns>
+                              </TableColumn>
+                          </columns>
+                        </TableView>
+                     </children>
                      <BorderPane.margin>
-                        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                        <Insets />
                      </BorderPane.margin>
-                  </TableView>
+                  </AnchorPane>
                </center>
             </BorderPane>
          </items>
