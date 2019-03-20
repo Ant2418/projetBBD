@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <SplitPane dividerPositions="0.1" prefHeight="750.0" prefWidth="1000.0">
+         <items>
+            <VBox fx:id="menuVBox" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #979797;">
+               <children>
+                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                     <VBox.margin>
+                        <Insets bottom="20.0" top="20.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <Button fx:id="logOutButton" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" text="Deconnexion">
+                     <VBox.margin>
+                        <Insets bottom="5.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="homeCButton" layoutX="20.0" layoutY="150.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" text="home">
+                     <VBox.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="addExpButton" layoutX="20.0" layoutY="240.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" text="addExp">
+                     <VBox.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+            <BorderPane>
+               <top>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="MES EXPERIENCES" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font size="48.0" />
+                     </font>
+                     <BorderPane.margin>
+                        <Insets top="20.0" />
+                     </BorderPane.margin>
+                  </Text>
+               </top>
+               <center>
+                  <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <columns>
+                      <TableColumn fx:id="numExpCol" prefWidth="50.0" text="N°" />
+                      <TableColumn fx:id="etatCol" prefWidth="100.0" text="Etat" />
+                        <TableColumn fx:id="labCol" prefWidth="160.0" text="Laborantin" />
+                        <TableColumn fx:id="typeExpCol" prefWidth="150.0" text="      Type&#10;d'expérience" />
+                        <TableColumn fx:id="dureeCol" prefWidth="75.0" text="Durée&#10;(min)" />
+                        <TableColumn fx:id="nupletCol" prefWidth="75.0" text="Nombre&#10;réplicat" />
+                        <TableColumn fx:id="puitCol" prefWidth="75.0" text="Nombre&#10;   puit" />
+                        <TableColumn fx:id="dateCol" prefWidth="75.0" text="Date">
+                           <columns>
+                              <TableColumn fx:id="debCol" prefWidth="75.0" text="début" />
+                              <TableColumn fx:id="finCol" prefWidth="75.0" text="fin" />
+                           </columns>
+                        </TableColumn>
+                    </columns>
+                     <BorderPane.margin>
+                        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                     </BorderPane.margin>
+                  </TableView>
+               </center>
+            </BorderPane>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
