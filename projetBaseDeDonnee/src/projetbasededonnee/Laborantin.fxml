@@ -104,7 +104,7 @@
                               </BorderPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="homePageChercheur1" layoutX="10.0" layoutY="10.0" prefHeight="750.0" prefWidth="950.0">
+                        <AnchorPane fx:id="homePageChercheur1" layoutX="10.0" layoutY="10.0" prefHeight="750.0" prefWidth="950.0" visible="false">
                            <children>
                               <BorderPane prefHeight="750.0" prefWidth="950.0">
                                  <top>
@@ -201,6 +201,66 @@
                                        </image>
                                     </ImageView>
                                  </bottom>
+                              </BorderPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="homePageChercheur11" prefHeight="750.0" prefWidth="950.0">
+                           <children>
+                              <BorderPane prefHeight="750.0" prefWidth="950.0">
+                                 <top>
+                                    <VBox fx:id="titleAcceuil11" alignment="CENTER" prefHeight="100.0" prefWidth="942.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Label text="Validation des résultats">
+                                             <font>
+                                                <Font size="48.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                 </top>
+                                 <bottom>
+                                    <ImageView fx:id="validerIV1" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER_RIGHT">
+                                       <BorderPane.margin>
+                                          <Insets bottom="20.0" right="20.0" />
+                                       </BorderPane.margin>
+                                       <image>
+                                          <Image url="@checked.png" />
+                                       </image>
+                                    </ImageView>
+                                 </bottom>
+                                 <center>
+                                    <TableView fx:id="tableResultat" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                       <columns>
+                                          <TableColumn fx:id="resultExpCol" prefWidth="75.0" text="  Résultat&#10;Expérience" />
+                                          <TableColumn fx:id="resultatReplicatCol" prefWidth="738.3333129882812" text="Résultat des réplicats">
+                                             <columns>
+                                                <TableColumn fx:id="decisionCol" prefWidth="75.0" text="Décision" />
+                                                <TableColumn fx:id="couleurCol" prefWidth="68.0" text="Couleur" />
+                                                <TableColumn fx:id="moyCOl" prefWidth="275.0" text="Moyenne">
+                                                   <columns>
+                                                      <TableColumn fx:id="moyRougeCol" prefWidth="61.0" text="Rouge" />
+                                                      <TableColumn fx:id="moyVertCol" prefWidth="66.0" text="Vert" />
+                                                      <TableColumn fx:id="moyBleuCol" prefWidth="56.0" text="Bleu" />
+                                                      <TableColumn fx:id="moyTransCol" prefWidth="67.0" text="Transparent" />
+                                                   </columns>
+                                                </TableColumn>
+                                                <TableColumn fx:id="sdCol" prefWidth="275.0" text="Ecart type">
+                                                   <columns>
+                                                      <TableColumn fx:id="sdRougeCol1" prefWidth="75.0" text="Rouge" />
+                                                      <TableColumn fx:id="sdVertCol1" prefWidth="75.0" text="Vert" />
+                                                      <TableColumn fx:id="sdBleuCol1" prefWidth="75.0" text="Bleu" />
+                                                      <TableColumn fx:id="sdTransCol1" prefWidth="75.0" text="Transparent" />
+                                                   </columns>
+                                                </TableColumn>
+                                             </columns>
+                                          </TableColumn>
+                                          <TableColumn fx:id="resultExpCol1" prefWidth="95.66668701171875" text="Couleur&#10;du puit" />
+                                       </columns>
+                                       <BorderPane.margin>
+                                          <Insets bottom="20.0" left="20.0" right="20.0" />
+                                       </BorderPane.margin>
+                                    </TableView>
+                                 </center>
                               </BorderPane>
                            </children>
                         </AnchorPane>
