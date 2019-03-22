@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetbasededonnee.AcceuilChercheurController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetbasededonnee.AcceuilChercheurController">
    <children>
       <SplitPane dividerPositions="0.05" prefHeight="750.0" prefWidth="1000.0">
          <items>
@@ -54,23 +60,23 @@
             </VBox>
             <BorderPane>
                <center>
-                  <AnchorPane prefHeight="648.0" prefWidth="942.0" BorderPane.alignment="CENTER">
+                  <AnchorPane prefHeight="750.0" prefWidth="950.0" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane fx:id="homePageChercheur" prefHeight="648.0" prefWidth="942.0">
+                        <AnchorPane fx:id="homePageChercheur" prefHeight="750.0" prefWidth="950.0" visible="false">
                            <children>
                               <BorderPane prefHeight="750.0" prefWidth="942.0">
                                  <center>
                                     <TableView prefHeight="616.0" prefWidth="941.0" BorderPane.alignment="CENTER">
                                        <columns>
-                                          <TableColumn fx:id="numExpCol" prefWidth="25.0" text="N°" />
-                                          <TableColumn fx:id="nomExpCol" prefWidth="156.0" text="Nom" />
-                                          <TableColumn fx:id="etatCol" text="Etat" />
-                                          <TableColumn fx:id="labCol" prefWidth="162.0" text="Laborantin" />
-                                          <TableColumn fx:id="typeExpCol" prefWidth="117.0" text="      Type&#10;d'expérience" />
-                                          <TableColumn fx:id="dureeCol" prefWidth="65.0" text="Durée&#10;(min)" />
-                                          <TableColumn fx:id="nupletCol" prefWidth="61.0" text="Nombre&#10;réplicat" />
-                                          <TableColumn fx:id="puitCol" prefWidth="82.0" text="    Nombre&#10;puit/replicat&#10;" />
-                                          <TableColumn fx:id="dateCol" prefWidth="132.0" text="Date">
+                                          <TableColumn fx:id="numExpCol" prefWidth="37.0" text="N°" />
+                                          <TableColumn fx:id="nomExpCol" prefWidth="118.0" text="Nom" />
+                                          <TableColumn fx:id="etatCol" prefWidth="85.66665649414062" text="Etat" />
+                                          <TableColumn fx:id="labCol" prefWidth="110.66668701171875" text="Laborantin" />
+                                          <TableColumn fx:id="typeExpCol" prefWidth="109.6666259765625" text="      Type&#10;d'expérience" />
+                                          <TableColumn fx:id="TypeAnaCol" prefWidth="126.0" text="    Type &#10;d'analyse" />
+                                          <TableColumn fx:id="nupletCol" prefWidth="102.0" text="Nombre&#10;réplicat" />
+                                          <TableColumn fx:id="puitCol" prefWidth="98.33331298828125" text="    Nombre&#10;puit/replicat&#10;" />
+                                          <TableColumn fx:id="dateCol" prefWidth="103.3333740234375" text="Date">
                                              <columns>
                                                 <TableColumn fx:id="debCol" prefWidth="70.0" text="début" />
                                                 <TableColumn fx:id="finCol" prefWidth="68.0" text="fin" />
@@ -83,7 +89,7 @@
                                     </TableView>
                                  </center>
                                  <top>
-                                    <VBox fx:id="titleAcceuil" alignment="CENTER" prefHeight="100.0" prefWidth="942.0" BorderPane.alignment="CENTER">
+                                    <VBox fx:id="titleAcceuil" alignment="CENTER" prefHeight="100.0" prefWidth="950.0" BorderPane.alignment="CENTER">
                                        <children>
                                           <Label text="Acceuil">
                                              <font>
@@ -96,7 +102,74 @@
                               </BorderPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane prefHeight="748.0" prefWidth="940.0" />
+                        <AnchorPane prefHeight="750.0" prefWidth="950.0" visible="false">
+                           <children>
+                              <BorderPane prefHeight="750.0" prefWidth="950.0">
+                                 <top>
+                                    <VBox alignment="CENTER" prefHeight="100.0" prefWidth="950.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Label fx:id="AddExpLabel" text="Ajouter une expérience">
+                                             <font>
+                                                <Font size="48.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                 </top>
+                                 <center>
+                                    <GridPane prefHeight="448.0" prefWidth="950.0" BorderPane.alignment="CENTER">
+                                      <columnConstraints>
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                          <RowConstraints maxHeight="114.0" minHeight="10.0" prefHeight="72.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="230.0" minHeight="10.0" prefHeight="86.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="294.0" minHeight="10.0" prefHeight="82.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="292.0" minHeight="0.0" prefHeight="92.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="385.0" minHeight="10.0" prefHeight="121.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="385.0" minHeight="10.0" prefHeight="121.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <ComboBox fx:id="PlaqueCombo" prefWidth="150.0" promptText="Type de plaque" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Label text="Type de plaque*" GridPane.rowIndex="1" />
+                                          <Label text="Durée de l'expérience* (heure)" GridPane.rowIndex="2" />
+                                          <TextField fx:id="dureeTextfield" prefHeight="25.0" prefWidth="188.0" promptText="Durée de l'expérience" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Label text="Suivi dans le temps*" GridPane.rowIndex="3" />
+                                          <RadioButton fx:id="NonSuiviButton" mnemonicParsing="false" text="Non" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                                          <RadioButton fx:id="OuiSuiviButton" mnemonicParsing="false" text="Oui" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                                          <Label fx:id="FreqLabel" text="Fréquence" GridPane.rowIndex="4" />
+                                          <TextField fx:id="frequTextField" promptText="Fréquence" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                          <Label text="Nombre de puits par réplicat*" />
+                                          <TextField fx:id="puitReplicatTextField" promptText="Nombre de puits" GridPane.columnIndex="1" />
+                                          <Label text="Type d'expérience*" GridPane.columnIndex="2" />
+                                          <Label text="Type d'analyse*" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                          <Label text="Biais 1*" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                          <Label text="Biais 2*" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                          <Label prefHeight="0.0" prefWidth="37.0" text="Biais 3 " GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                          <ComboBox fx:id="TypeExpCombo" prefWidth="150.0" promptText="Type d'expérience" GridPane.columnIndex="3" />
+                                          <ComboBox fx:id="TypeAnalyseCombo" prefWidth="150.0" promptText="Type d'analyse" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                          <TextField fx:id="Alpha1TextField" promptText="Alpha 1" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                          <TextField fx:id="Alpha2TextField" promptText="Alpha 2" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                                          <TextField fx:id="Alpha3TextField" promptText="Alpha 3" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                                       </children>
+                                       <BorderPane.margin>
+                                          <Insets />
+                                       </BorderPane.margin>
+                                       <padding>
+                                          <Insets bottom="50.0" left="160.0" right="160.0" top="50.0" />
+                                       </padding>
+                                    </GridPane>
+                                 </center>
+                              </BorderPane>
+                           </children></AnchorPane>
+                        <AnchorPane prefHeight="750.0" prefWidth="950.0">
+                           <children>
+                              <BorderPane prefHeight="750.0" prefWidth="950.0" />
+                           </children>
+                        </AnchorPane>
                      </children>
                      <BorderPane.margin>
                         <Insets />
