@@ -49,7 +49,7 @@ public class ConnexionController implements Initializable {
         
         //This line gets the Stage information
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-        
+      
         window.setScene(ajoutScene);
         window.show();
     }

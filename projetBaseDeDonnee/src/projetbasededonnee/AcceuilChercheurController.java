@@ -96,7 +96,7 @@ public class AcceuilChercheurController implements Initializable {
     @FXML
     private TextField Alpha3TextField;
     @FXML
-    private AnchorPane dfghj;
+    private AnchorPane AddUpletPage;
     @FXML
     private VBox titleAcceuil1;
     @FXML
@@ -145,9 +145,10 @@ public class AcceuilChercheurController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        homePageChercheur.setVisible(true);
+        ajoutExpPage.setVisible(false); 
+        AddUpletPage.setVisible(false);
     }    
-    
     
     //Quand on clique sur l'image deconnection, on affiche la scène connexion
         //Ajout mouseClicked sur l'image deconnexion
@@ -161,9 +162,24 @@ public class AcceuilChercheurController implements Initializable {
         //This line gets the Stage information
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         
+        
         window.setScene(ajoutSceneConn);
         window.show();
         }
-
-  
+        
+        //Quand on clique sur l'image d'accueil
+        public void homeEvent(MouseEvent event) throws IOException
+        {
+            homePageChercheur.setVisible(true);
+            ajoutExpPage.setVisible(false); 
+            AddUpletPage.setVisible(false);
+        } 
+        
+         //Quand on clique sur l'image 
+        public void AddExpEvent(MouseEvent event) throws IOException
+        {
+            homePageChercheur.setVisible(false);
+            ajoutExpPage.setVisible(true); 
+            AddUpletPage.setVisible(false);
+        } 
 }
