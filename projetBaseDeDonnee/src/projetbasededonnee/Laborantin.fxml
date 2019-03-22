@@ -11,6 +11,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -37,7 +38,7 @@
                         <Image url="@power.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="deconnexionIV1" fitHeight="45.0" fitWidth="45.0" layoutX="13.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="home" fitHeight="45.0" fitWidth="45.0" layoutX="13.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@home.png" />
                      </image>
@@ -45,7 +46,7 @@
                         <Insets bottom="5.0" top="5.0" />
                      </VBox.margin>
                   </ImageView>
-                  <ImageView fx:id="deconnexionIV11" fitHeight="45.0" fitWidth="45.0" layoutX="13.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="experience" fitHeight="45.0" fitWidth="45.0" layoutX="13.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@flask.png" />
                      </image>
@@ -53,7 +54,7 @@
                         <Insets bottom="5.0" top="5.0" />
                      </VBox.margin>
                   </ImageView>
-                  <ImageView fx:id="deconnexionIV111" fitHeight="45.0" fitWidth="45.0" layoutX="13.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="resultat" fitHeight="45.0" fitWidth="45.0" layoutX="13.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@analysis.png" />
                      </image>
@@ -218,16 +219,6 @@
                                        </children>
                                     </VBox>
                                  </top>
-                                 <bottom>
-                                    <ImageView fx:id="validerIV1" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER_RIGHT">
-                                       <BorderPane.margin>
-                                          <Insets bottom="20.0" right="20.0" />
-                                       </BorderPane.margin>
-                                       <image>
-                                          <Image url="@checked.png" />
-                                       </image>
-                                    </ImageView>
-                                 </bottom>
                                  <center>
                                     <TableView fx:id="tableResultat" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                                        <columns>
@@ -261,6 +252,31 @@
                                        </BorderPane.margin>
                                     </TableView>
                                  </center>
+                                 <bottom>
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <ImageView fx:id="validerIV1" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@checked.png" />
+                                             </image>
+                                             <HBox.margin>
+                                                <Insets right="20.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                          <ImageView fx:id="validerIV11" fitHeight="60.0" fitWidth="60.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@checked.png" />
+                                             </image>
+                                             <HBox.margin>
+                                                <Insets right="20.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                       </children>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                    </HBox>
+                                 </bottom>
                               </BorderPane>
                            </children>
                         </AnchorPane>

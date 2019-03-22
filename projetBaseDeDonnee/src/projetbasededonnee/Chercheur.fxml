@@ -40,7 +40,7 @@
                         <Image url="@power.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="deconnexionIV1" fitHeight="45.0" fitWidth="45.0" layoutX="13.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="home" fitHeight="45.0" fitWidth="45.0" layoutX="13.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@home.png" />
                      </image>
@@ -48,7 +48,7 @@
                         <Insets bottom="5.0" top="5.0" />
                      </VBox.margin>
                   </ImageView>
-                  <ImageView fx:id="deconnexionIV11" fitHeight="45.0" fitWidth="45.0" layoutX="13.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="newExp" fitHeight="45.0" fitWidth="45.0" layoutX="13.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@flask.png" />
                      </image>
