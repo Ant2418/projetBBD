@@ -1,11 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetbasededonnee.LaborantinController">
-    
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetbasededonnee.AcceuilChercheurController">
+   <children>
+      <SplitPane dividerPositions="0.05" prefHeight="750.0" prefWidth="1000.0">
+         <items>
+            <VBox fx:id="menuVBox" alignment="TOP_CENTER" prefHeight="750.0" prefWidth="50.0" style="-fx-background-color: #979797;">
+               <children>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <VBox.margin>
+                        <Insets bottom="20.0" top="20.0" />
+                     </VBox.margin>
+                     <image>
+                        <Image url="@user.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="deconnexionIV" fitHeight="45.0" fitWidth="45.0" layoutX="10.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+                     <VBox.margin>
+                        <Insets bottom="5.0" top="50.0" />
+                     </VBox.margin>
+                     <image>
+                        <Image url="@power.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="deconnexionIV1" fitHeight="45.0" fitWidth="45.0" layoutX="13.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@home.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <ImageView fx:id="deconnexionIV11" fitHeight="45.0" fitWidth="45.0" layoutX="13.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@flask.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <ImageView fx:id="deconnexionIV111" fitHeight="45.0" fitWidth="45.0" layoutX="13.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@analysis.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                     </VBox.margin>
+                  </ImageView>
+               </children>
+            </VBox>
+            <BorderPane>
+               <center>
+                  <AnchorPane prefHeight="648.0" prefWidth="942.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane fx:id="homePageChercheur" prefHeight="648.0" prefWidth="942.0">
+                           <children>
+                              <BorderPane prefHeight="750.0" prefWidth="942.0">
+                                 <center>
+                                    <TableView prefHeight="616.0" prefWidth="941.0" BorderPane.alignment="CENTER">
+                                       <columns>
+                                          <TableColumn fx:id="numExpCol" prefWidth="25.0" text="N°" />
+                                          <TableColumn fx:id="nomExpCol" prefWidth="156.0" text="Nom" />
+                                          <TableColumn fx:id="etatCol" text="Etat" />
+                                          <TableColumn fx:id="labCol" prefWidth="162.0" text="Laborantin" />
+                                          <TableColumn fx:id="typeExpCol" prefWidth="117.0" text="      Type&#10;d'expérience" />
+                                          <TableColumn fx:id="dureeCol" prefWidth="65.0" text="Durée&#10;(min)" />
+                                          <TableColumn fx:id="nupletCol" prefWidth="61.0" text="Nombre&#10;réplicat" />
+                                          <TableColumn fx:id="puitCol" prefWidth="82.0" text="    Nombre&#10;puit/replicat&#10;" />
+                                          <TableColumn fx:id="dateCol" prefWidth="132.0" text="Date">
+                                             <columns>
+                                                <TableColumn fx:id="debCol" prefWidth="70.0" text="début" />
+                                                <TableColumn fx:id="finCol" prefWidth="68.0" text="fin" />
+                                             </columns>
+                                          </TableColumn>
+                                       </columns>
+                                       <BorderPane.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </BorderPane.margin>
+                                    </TableView>
+                                 </center>
+                                 <top>
+                                    <VBox fx:id="titleAcceuil" alignment="CENTER" prefHeight="100.0" prefWidth="942.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Label text="Acceuil">
+                                             <font>
+                                                <Font size="48.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                 </top>
+                              </BorderPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="748.0" prefWidth="940.0" />
+                     </children>
+                     <BorderPane.margin>
+                        <Insets />
+                     </BorderPane.margin>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </items>
+      </SplitPane>
+   </children>
 </AnchorPane>
