@@ -51,7 +51,7 @@
                   </ImageView>
                   <ImageView fx:id="newExp" fitHeight="45.0" fitWidth="45.0" layoutX="13.0" layoutY="205.0" onMouseClicked="#AddExpEvent" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@flask.png" />
+                        <Image url="@addExp.png" />
                      </image>
                      <VBox.margin>
                         <Insets bottom="5.0" top="5.0" />

@@ -139,6 +139,10 @@ public class AcceuilChercheurController implements Initializable {
     private TableColumn<?, ?> plaqueCol;
     @FXML
     private TableColumn<?, ?> photometreCol;
+    @FXML
+    private ImageView resuserIV;
+    @FXML
+    private ImageView validerIV11;
 
     /**
      * Initializes the controller class.
@@ -154,6 +158,7 @@ public class AcceuilChercheurController implements Initializable {
         //Ajout mouseClicked sur l'image deconnexion
        //deconnexionIV.setOnMouseClicked(new EventHandler<MouseEvent>() {
 
+    @FXML
         public void deconnexionEvent(MouseEvent event) throws IOException
         {
         Parent ajoutParent = FXMLLoader.load(getClass().getResource("connexion.fxml"));
@@ -168,6 +173,7 @@ public class AcceuilChercheurController implements Initializable {
         }
         
         //Quand on clique sur l'image d'accueil
+    @FXML
         public void homeEvent(MouseEvent event) throws IOException
         {
             homePageChercheur.setVisible(true);
@@ -176,6 +182,7 @@ public class AcceuilChercheurController implements Initializable {
         } 
         
          //Quand on clique sur l'image 
+    @FXML
         public void AddExpEvent(MouseEvent event) throws IOException
         {
             homePageChercheur.setVisible(false);

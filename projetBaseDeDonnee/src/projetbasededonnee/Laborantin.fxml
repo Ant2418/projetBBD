@@ -16,9 +16,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetbasededonnee.AcceuilChercheurController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetbasededonnee.AcceuilChercheurController">
    <children>
-      <SplitPane dividerPositions="0.05" prefHeight="750.0" prefWidth="1000.0">
+      <SplitPane dividerPositions="0.05" prefHeight="600.0" prefWidth="1000.0">
          <items>
             <VBox fx:id="menuVBox" alignment="TOP_CENTER" prefHeight="750.0" prefWidth="50.0" style="-fx-background-color: #979797;">
                <children>
@@ -66,20 +66,20 @@
             </VBox>
             <BorderPane>
                <center>
-                  <AnchorPane prefHeight="750.0" prefWidth="950.0" BorderPane.alignment="CENTER">
+                  <AnchorPane prefHeight="600.0" prefWidth="950.0" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane fx:id="homePageChercheur" prefHeight="750.0" prefWidth="950.0" visible="false">
+                        <AnchorPane fx:id="homePageChercheur" prefHeight="600.0" prefWidth="950.0">
                            <children>
-                              <BorderPane prefHeight="750.0" prefWidth="942.0">
+                              <BorderPane prefHeight="600.0" prefWidth="942.0">
                                  <center>
-                                    <TableView prefHeight="616.0" prefWidth="941.0" BorderPane.alignment="CENTER">
+                                    <TableView fx:id="tableAccueil" prefHeight="616.0" prefWidth="941.0" BorderPane.alignment="CENTER">
                                        <columns>
                                           <TableColumn fx:id="numExpCol" prefWidth="25.0" text="N°" />
                                           <TableColumn fx:id="nomExpCol" prefWidth="156.0" text="Nom" />
                                           <TableColumn fx:id="etatCol" text="Etat" />
                                           <TableColumn fx:id="labCol" prefWidth="162.0" text="Chercheur" />
                                           <TableColumn fx:id="typeExpCol" prefWidth="92.0" text="      Type&#10;d'expérience" />
-                                          <TableColumn fx:id="typeExpCol1" prefWidth="104.0" text="   Type&#10;d'analyse" />
+                                          <TableColumn fx:id="typeAnaCol" prefWidth="104.0" text="   Type&#10;d'analyse" />
                                           <TableColumn fx:id="dureeCol" prefWidth="46.0" text="Durée&#10;(min)" />
                                           <TableColumn fx:id="nupletCol" prefWidth="61.0" text="Nombre&#10;réplicat" />
                                           <TableColumn fx:id="puitCol" prefWidth="82.0" text="    Nombre&#10;puit/replicat&#10;" />
@@ -92,7 +92,7 @@
                                     </TableView>
                                  </center>
                                  <top>
-                                    <VBox fx:id="titleAcceuil" alignment="CENTER" prefHeight="100.0" prefWidth="942.0" BorderPane.alignment="CENTER">
+                                    <VBox fx:id="titleAcceuil" alignment="CENTER" prefHeight="100.0" prefWidth="950.0" BorderPane.alignment="CENTER">
                                        <children>
                                           <Label text="Acceuil">
                                              <font>
@@ -105,23 +105,23 @@
                               </BorderPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="expLab" prefHeight="750.0" prefWidth="950.0">
+                        <AnchorPane fx:id="expLabPage" prefHeight="600.0" prefWidth="950.0" visible="false">
                            <children>
-                              <BorderPane prefHeight="750.0" prefWidth="942.0">
+                              <BorderPane prefHeight="600.0" prefWidth="942.0">
                                  <center>
-                                    <TableView prefHeight="616.0" prefWidth="941.0" BorderPane.alignment="CENTER">
+                                    <TableView fx:id="tableLab" BorderPane.alignment="CENTER">
                                        <columns>
-                                          <TableColumn fx:id="numExpCol1" prefWidth="25.0" text="N°" />
-                                          <TableColumn fx:id="nomExpCol1" prefWidth="156.0" text="Nom" />
-                                          <TableColumn fx:id="etatCol1" text="Etat" />
-                                          <TableColumn fx:id="labCol1" prefWidth="162.0" text="Chercheur" />
-                                          <TableColumn fx:id="typeExpCol1" prefWidth="92.0" text="      Type&#10;d'expérience" />
-                                          <TableColumn fx:id="typeExpCol11" prefWidth="104.0" text="   Type&#10;d'analyse" />
-                                          <TableColumn fx:id="dureeCol1" prefWidth="46.0" text="Durée&#10;(min)" />
-                                          <TableColumn fx:id="nupletCol1" prefWidth="61.0" text="Nombre&#10;réplicat" />
-                                          <TableColumn fx:id="puitCol1" prefWidth="82.0" text="    Nombre&#10;puit/replicat&#10;" />
-                                          <TableColumn fx:id="totalPuitCol1" prefWidth="50.0" text="Total&#10;puits" />
-                                          <TableColumn fx:id="checkCol1" prefWidth="50.0" />
+                                          <TableColumn fx:id="numExpLabCol" prefWidth="25.0" text="N°" />
+                                          <TableColumn fx:id="nomExpLabCol" prefWidth="156.0" text="Nom" />
+                                          <TableColumn fx:id="etatLabCol" text="Etat" />
+                                          <TableColumn fx:id="chercheurLabCol" prefWidth="162.0" text="Chercheur" />
+                                          <TableColumn fx:id="typeExpLabCol" prefWidth="92.0" text="      Type&#10;d'expérience" />
+                                          <TableColumn fx:id="typeAnaLabCol" prefWidth="104.0" text="   Type&#10;d'analyse" />
+                                          <TableColumn fx:id="dureeLabCol" prefWidth="46.0" text="Durée&#10;(min)" />
+                                          <TableColumn fx:id="nupletLabCol" prefWidth="61.0" text="Nombre&#10;réplicat" />
+                                          <TableColumn fx:id="puitLabCol" prefWidth="82.0" text="    Nombre&#10;puit/replicat&#10;" />
+                                          <TableColumn fx:id="totalPuitLabCol" prefWidth="50.0" text="Total&#10;puits" />
+                                          <TableColumn fx:id="checkLabCol" prefWidth="50.0" />
                                        </columns>
                                        <BorderPane.margin>
                                           <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -129,9 +129,9 @@
                                     </TableView>
                                  </center>
                                  <top>
-                                    <VBox fx:id="titleAcceuil2" alignment="CENTER" prefHeight="100.0" prefWidth="942.0" BorderPane.alignment="CENTER">
+                                    <VBox fx:id="titleAcceuil2" alignment="CENTER" prefHeight="100.0" prefWidth="950.0" BorderPane.alignment="CENTER">
                                        <children>
-                                          <Label text="Acceuil">
+                                          <Label text="Mes expériences">
                                              <font>
                                                 <Font size="48.0" />
                                              </font>
@@ -142,11 +142,11 @@
                               </BorderPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="visuExpPage" prefHeight="750.0" prefWidth="950.0" visible="false">
+                        <AnchorPane fx:id="visuExpPage" prefHeight="600.0" prefWidth="950.0" visible="false">
                            <children>
-                              <BorderPane prefHeight="750.0" prefWidth="950.0">
+                              <BorderPane prefHeight="600.0" prefWidth="950.0">
                                  <top>
-                                    <VBox fx:id="titleAcceuil1" alignment="CENTER" prefHeight="100.0" prefWidth="942.0" BorderPane.alignment="CENTER">
+                                    <VBox alignment="CENTER" prefHeight="100.0" BorderPane.alignment="CENTER">
                                        <children>
                                           <Label text="Visualisation de l'expérience">
                                              <font>
@@ -242,11 +242,11 @@
                               </BorderPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="validationPage" prefHeight="750.0" prefWidth="950.0" visible="false">
+                        <AnchorPane fx:id="validationPage" prefHeight="600.0" prefWidth="950.0" visible="false">
                            <children>
-                              <BorderPane prefHeight="750.0" prefWidth="950.0">
+                              <BorderPane prefHeight="600.0" prefWidth="950.0">
                                  <top>
-                                    <VBox fx:id="titleAcceuil11" alignment="CENTER" prefHeight="100.0" prefWidth="942.0" BorderPane.alignment="CENTER">
+                                    <VBox fx:id="titleAcceuil11" alignment="CENTER" prefHeight="100.0" prefWidth="950.0" BorderPane.alignment="CENTER">
                                        <children>
                                           <Label text="Validation des résultats">
                                              <font>
@@ -257,19 +257,19 @@
                                     </VBox>
                                  </top>
                                  <center>
-                                    <TableView fx:id="tableResultat" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                    <TableView fx:id="tableResultat" BorderPane.alignment="CENTER">
                                        <columns>
                                           <TableColumn fx:id="resultExpCol" prefWidth="75.0" text="  Résultat&#10;Expérience" />
                                           <TableColumn fx:id="resultatReplicatCol" prefWidth="738.3333129882812" text="Résultat des réplicats">
                                              <columns>
                                                 <TableColumn fx:id="decisionCol" prefWidth="75.0" text="Décision" />
-                                                <TableColumn fx:id="couleurCol" prefWidth="68.0" text="Couleur" />
+                                                <TableColumn fx:id="couleurCol" prefWidth="75.0" text="Couleur" />
                                                 <TableColumn fx:id="moyCOl" prefWidth="275.0" text="Moyenne">
                                                    <columns>
-                                                      <TableColumn fx:id="moyRougeCol" prefWidth="61.0" text="Rouge" />
-                                                      <TableColumn fx:id="moyVertCol" prefWidth="66.0" text="Vert" />
-                                                      <TableColumn fx:id="moyBleuCol" prefWidth="56.0" text="Bleu" />
-                                                      <TableColumn fx:id="moyTransCol" prefWidth="67.0" text="Transparent" />
+                                                      <TableColumn fx:id="moyRougeCol" prefWidth="75.0" text="Rouge" />
+                                                      <TableColumn fx:id="moyVertCol" prefWidth="75.0" text="Vert" />
+                                                      <TableColumn fx:id="moyBleuCol" prefWidth="75.0" text="Bleu" />
+                                                      <TableColumn fx:id="moyTransCol" prefWidth="75.0" text="Transparent" />
                                                    </columns>
                                                 </TableColumn>
                                                 <TableColumn fx:id="sdCol" prefWidth="275.0" text="Ecart type">
@@ -282,7 +282,7 @@
                                                 </TableColumn>
                                              </columns>
                                           </TableColumn>
-                                          <TableColumn fx:id="resultExpCol1" prefWidth="95.66668701171875" text="Couleur&#10;du puit" />
+                                          <TableColumn fx:id="resultExpCol1" prefWidth="75.0" text="Couleur&#10;du puit" />
                                        </columns>
                                        <BorderPane.margin>
                                           <Insets bottom="20.0" left="20.0" right="20.0" />
@@ -290,9 +290,9 @@
                                     </TableView>
                                  </center>
                                  <bottom>
-                                    <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="100.0" BorderPane.alignment="CENTER">
                                        <children>
-                                          <ImageView fx:id="resuserIV" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="refuserIV" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@multiply.png" />
                                              </image>
@@ -300,7 +300,7 @@
                                                 <Insets right="20.0" />
                                              </HBox.margin>
                                           </ImageView>
-                                          <ImageView fx:id="validerIV11" fitHeight="60.0" fitWidth="60.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="validerResultat" fitHeight="60.0" fitWidth="60.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@checked.png" />
                                              </image>
