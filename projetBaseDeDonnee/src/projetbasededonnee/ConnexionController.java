@@ -5,6 +5,7 @@
  */
 package projetbasededonnee;
 
+import java.sql.*;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -48,17 +49,35 @@ public class ConnexionController implements Initializable {
         connectServer();
     }   
     
-    public void connexionButton(ActionEvent event) throws IOException
+    public void connexionButton(ActionEvent event) throws IOException, SQLException
     {
-        
-        Parent ajoutParent = FXMLLoader.load(getClass().getResource("Chercheur.fxml"));
-        Scene ajoutScene = new Scene(ajoutParent);
-        
-        //This line gets the Stage information
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-      
-        window.setScene(ajoutScene);
-        window.show();
+    
+        Statement stmt = con.createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT fonction FROM PERSONNE WHERE email = 'emailTF' and mot_de_passe = 'mdpPF'");
+        while (rs.next()) {
+            String res=rs.getString(1); 
+            if ("chercheur".equals(res)) {
+                Parent ajoutParent = FXMLLoader.load(getClass().getResource("Chercheur.fxml"));
+                Scene ajoutScene = new Scene(ajoutParent);
+                    
+                //This line gets the Stage information
+                Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+                window.setScene(ajoutScene);
+                window.show();
+            }
+            else if ("laborantin".equals(res)){
+                Parent ajoutParent = FXMLLoader.load(getClass().getResource("Laborantin.fxml"));
+                Scene ajoutScene = new Scene(ajoutParent);
+                    
+                //This line gets the Stage information
+                Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+                window.setScene(ajoutScene);
+                window.show();
+            }
+        }
+            
     }
     
     
@@ -76,6 +95,7 @@ public class ConnexionController implements Initializable {
             while (rs.next()) {
                 System.out.println(rs.getInt(1) + "  " + rs.getString(2) + "  " + rs.getString(3));
             }
+          
         } catch (Exception e) {
             System.out.println(e);
         }
