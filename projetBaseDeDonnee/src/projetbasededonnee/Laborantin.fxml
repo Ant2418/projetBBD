@@ -8,6 +8,7 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -125,11 +126,11 @@
                                  <center>
                                     <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
                                       <tabs>
-                                        <Tab fx:id="tableARenouveller" text="A Renouveller">
+                                        <Tab fx:id="tableARenouveller" text="A Renouveler">
                                           <content>
                                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                    <children>
-                                                      <TableView fx:id="tableLabAR" layoutX="36.0" layoutY="26.0">
+                                                      <TableView fx:id="tableLabAR" layoutX="36.0" layoutY="26.0" prefHeight="380.0" prefWidth="830.0">
                                                          <columns>
                                                             <TableColumn fx:id="numExpLabARCol" prefWidth="25.0" text="N°" />
                                                             <TableColumn fx:id="nomExpLabARCol" prefWidth="156.0" text="Nom" />
@@ -143,6 +144,7 @@
                                                             <TableColumn fx:id="checkLabARCol" prefWidth="50.0" />
                                                          </columns>
                                                       </TableView>
+                                                      <Button fx:id="lancerExpButton" layoutX="749.0" layoutY="412.0" mnemonicParsing="false" onAction="#lancerExpEvent" text="Lancer l'expérience" />
                                                    </children>
                                                 </AnchorPane>
                                           </content>
@@ -151,7 +153,7 @@
                                              <content>
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                    <children>
-                                                      <TableView fx:id="tableLabEA" layoutX="36.0" layoutY="26.0">
+                                                      <TableView fx:id="tableLabEA" layoutX="36.0" layoutY="26.0" prefHeight="380.0" prefWidth="830.0">
                                                          <columns>
                                                             <TableColumn fx:id="numExpLabEACol" prefWidth="25.0" text="N°" />
                                                             <TableColumn fx:id="nomExpLabEACol" prefWidth="156.0" text="Nom" />
@@ -165,6 +167,7 @@
                                                             <TableColumn fx:id="checkLabCol1" prefWidth="50.0" />
                                                          </columns>
                                                       </TableView>
+                                                      <Button fx:id="lancerExpButton" layoutX="749.0" layoutY="412.0" mnemonicParsing="false" onAction="#lancerExpEvent" text="Lancer l'expérience" />
                                                    </children>
                                                 </AnchorPane>
                                              </content>
@@ -209,7 +212,7 @@
                               </BorderPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="visuExpPage" prefHeight="600.0" prefWidth="950.0" visible="false">
+                        <AnchorPane fx:id="visuExpPage" prefHeight="600.0" prefWidth="950.0">
                            <children>
                               <BorderPane prefHeight="600.0" prefWidth="950.0">
                                  <top>
@@ -292,6 +295,9 @@
                                              <GridPane.margin>
                                                 <Insets bottom="10.0" left="160.0" right="160.0" top="10.0" />
                                              </GridPane.margin>
+                                             <tooltip>
+                                                <Tooltip text="Double clique sur une ligne permet de visualiser &#10;où sont vos réplicats dans la plaque que vous &#10;avez choisi" />
+                                             </tooltip>
                                           </TableView>
                                        </children>
                                     </GridPane>
@@ -325,7 +331,7 @@
                               </BorderPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="validationPage" onMouseClicked="#validationEvent" prefHeight="600.0" prefWidth="950.0">
+                        <AnchorPane fx:id="validationPage" onMouseClicked="#validationEvent" prefHeight="600.0" prefWidth="950.0" visible="false">
                            <children>
                               <BorderPane prefHeight="600.0" prefWidth="950.0">
                                  <top>

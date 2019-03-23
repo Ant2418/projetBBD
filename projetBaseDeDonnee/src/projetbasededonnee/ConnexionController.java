@@ -92,7 +92,7 @@ public class ConnexionController implements Initializable {
 //                System.out.println(e);
 //            }  
 //        }
-        Parent ajoutParent = FXMLLoader.load(getClass().getResource("Chercheur.fxml"));
+        Parent ajoutParent = FXMLLoader.load(getClass().getResource("Laborantin.fxml"));
         Scene ajoutScene = new Scene(ajoutParent);
 
         //This line gets the Stage information

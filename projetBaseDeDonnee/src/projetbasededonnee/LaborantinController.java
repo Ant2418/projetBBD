@@ -8,12 +8,14 @@ package projetbasededonnee;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TableColumn;
@@ -139,6 +141,8 @@ public class LaborantinController implements Initializable {
     @FXML    private TableColumn<?, ?> sdBleuCol1;
     @FXML    private TableColumn<?, ?> sdTransCol1;
     @FXML    private TableColumn<?, ?> resultExpCol1;
+    
+    @FXML    private Button lancerExpButton;
 
     /**
      * Initializes the controller class.
@@ -151,6 +155,7 @@ public class LaborantinController implements Initializable {
         expLabPage.setVisible(false); 
         visuExpPage.setVisible(false);
         validationPage.setVisible(false);
+//        lancerExpButton.setDisable(true);
     }      
 
     /**
@@ -158,6 +163,7 @@ public class LaborantinController implements Initializable {
      * @param event
      * @throws IOException 
      */
+    @FXML
     public void deconnexionEvent(MouseEvent event) throws IOException {
         Parent ajoutParent = FXMLLoader.load(getClass().getResource("connexion.fxml"));
         Scene ajoutSceneConn = new Scene(ajoutParent);
@@ -173,6 +179,7 @@ public class LaborantinController implements Initializable {
      * @param event
      * @throws IOException 
      */
+    @FXML
     public void homeEvent(MouseEvent event) throws IOException {
         homePageLab.setVisible(true);
         expLabPage.setVisible(false); 
@@ -186,6 +193,7 @@ public class LaborantinController implements Initializable {
      * @param event
      * @throws IOException 
      */
+    @FXML
     public void experienceLabEvent(MouseEvent event) throws IOException {
         homePageLab.setVisible(false);
         expLabPage.setVisible(true); 
@@ -198,11 +206,12 @@ public class LaborantinController implements Initializable {
      * @param event
      * @throws IOException 
      */
-    public void lancerExpEvent(MouseEvent event)throws IOException {
+    public void lancerExpEvent(ActionEvent event)throws IOException {
         homePageLab.setVisible(false);
         expLabPage.setVisible(false); 
         visuExpPage.setVisible(true);
         validationPage.setVisible(false);
+        
     }
     
     /**
@@ -210,11 +219,11 @@ public class LaborantinController implements Initializable {
      * @param event
      * @throws IOException 
      */
+    @FXML
     public void validationEvent(MouseEvent event)throws IOException {
         homePageLab.setVisible(false);
         expLabPage.setVisible(false); 
         visuExpPage.setVisible(false);
         validationPage.setVisible(true);
     } 
-    
 }
