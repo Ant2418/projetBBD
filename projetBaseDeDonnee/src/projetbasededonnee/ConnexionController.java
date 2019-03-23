@@ -9,7 +9,6 @@ import java.sql.*;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ResourceBundle;
@@ -51,11 +50,16 @@ public class ConnexionController implements Initializable {
     
     public void connexionButton(ActionEvent event) throws IOException, SQLException
     {
-    
-        Statement stmt = con.createStatement();
-        ResultSet rs = stmt.executeQuery("SELECT fonction FROM PERSONNE WHERE email = 'emailTF' and mot_de_passe = 'mdpPF'");
+        //FAIRE UN LABEL POUR AFFICHER UN MESSAGE D'ERREUR 
+        if (emailTF.getText().isEmpty() == false && mdpPF.getText().isEmpty() == false) {
+        try {
+             Statement stmt = con.createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT fonction"
+                + "FROM PERSONNE"
+                + "WHERE email ='" + emailTF.getText() + "' AND mot_de_passe = '" + mdpPF.getText() + "'");
         while (rs.next()) {
             String res=rs.getString(1); 
+            System.out.println(res);
             if ("chercheur".equals(res)) {
                 Parent ajoutParent = FXMLLoader.load(getClass().getResource("Chercheur.fxml"));
                 Scene ajoutScene = new Scene(ajoutParent);
@@ -78,6 +82,10 @@ public class ConnexionController implements Initializable {
             }
         }
             
+          } catch (SQLException e) {
+                System.out.println(e);
+            }  
+    }
     }
     
     
