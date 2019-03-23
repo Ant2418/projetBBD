@@ -19,7 +19,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetbasededonnee.AcceuilChercheurController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetbasededonnee.LaborantinController">
    <children>
       <SplitPane dividerPositions="0.05" prefHeight="600.0" prefWidth="1000.0">
          <items>
@@ -33,7 +33,7 @@
                         <Image url="@user.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="deconnexionIV" fitHeight="45.0" fitWidth="45.0" layoutX="10.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="deconnexionIV" fitHeight="45.0" fitWidth="45.0" layoutX="10.0" layoutY="30.0" onMouseClicked="#deconnexionEvent" pickOnBounds="true" preserveRatio="true">
                      <VBox.margin>
                         <Insets bottom="5.0" top="50.0" />
                      </VBox.margin>
@@ -41,7 +41,7 @@
                         <Image url="@power.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="home" fitHeight="45.0" fitWidth="45.0" layoutX="13.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="home" fitHeight="45.0" fitWidth="45.0" layoutX="13.0" layoutY="150.0" onMouseClicked="#homeEvent" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@home.png" />
                      </image>
@@ -49,7 +49,7 @@
                         <Insets bottom="5.0" top="5.0" />
                      </VBox.margin>
                   </ImageView>
-                  <ImageView fx:id="experience" fitHeight="45.0" fitWidth="45.0" layoutX="13.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="experience" fitHeight="45.0" fitWidth="45.0" layoutX="13.0" layoutY="205.0" onMouseClicked="#experienceLabEvent" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@flask.png" />
                      </image>
@@ -57,7 +57,7 @@
                         <Insets bottom="5.0" top="5.0" />
                      </VBox.margin>
                   </ImageView>
-                  <ImageView fx:id="resultat" fitHeight="45.0" fitWidth="45.0" layoutX="13.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="resultat" fitHeight="45.0" fitWidth="45.0" layoutX="13.0" layoutY="260.0" onMouseClicked="#validationEvent" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@analysis.png" />
                      </image>
@@ -108,7 +108,7 @@
                               </BorderPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="expLabPage" prefHeight="600.0" prefWidth="950.0" visible="false">
+                        <AnchorPane fx:id="expLabPage" onMouseClicked="#experienceLabEvent" prefHeight="600.0" prefWidth="950.0" visible="false">
                            <children>
                               <BorderPane prefHeight="600.0" prefWidth="942.0">
                                  <top>
@@ -209,7 +209,7 @@
                               </BorderPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="visuExpPage" prefHeight="600.0" prefWidth="950.0">
+                        <AnchorPane fx:id="visuExpPage" prefHeight="600.0" prefWidth="950.0" visible="false">
                            <children>
                               <BorderPane prefHeight="600.0" prefWidth="950.0">
                                  <top>
@@ -325,7 +325,7 @@
                               </BorderPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="validationPage" prefHeight="600.0" prefWidth="950.0" visible="false">
+                        <AnchorPane fx:id="validationPage" onMouseClicked="#validationEvent" prefHeight="600.0" prefWidth="950.0">
                            <children>
                               <BorderPane prefHeight="600.0" prefWidth="950.0">
                                  <top>

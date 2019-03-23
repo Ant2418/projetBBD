@@ -25,88 +25,104 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
- * FXML Controller class
+ * FXML Controller class de connexion.fxml
  *
- * @author Ludivine
+ * @author Ludivine and Antoine
  */
 public class ConnexionController implements Initializable {
 
-    @FXML
-    private TextField emailTF;
-    @FXML
-    private PasswordField mdpPF;
-    @FXML
-    private Button connexionButton;
+    @FXML    private TextField emailTF;
+    @FXML    private PasswordField mdpPF;
+    @FXML    private Button connexionButton;
    
     private Connection con; 
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        connectServer();
+//        connectServer();
     }   
     
+    /**
+     * Permet de se connecter par le bais d'un profil, un chercheur ou un 
+     * laborantin s'il existe dans la BDD
+     * @param event
+     * @throws IOException
+     * @throws SQLException 
+     */
     public void connexionButton(ActionEvent event) throws IOException, SQLException
     {
-        //FAIRE UN LABEL POUR AFFICHER UN MESSAGE D'ERREUR 
-        if (emailTF.getText().isEmpty() == false && mdpPF.getText().isEmpty() == false) {
-        try {
-             Statement stmt = con.createStatement();
-        ResultSet rs = stmt.executeQuery("SELECT fonction"
-                + "FROM PERSONNE"
-                + "WHERE email ='" + emailTF.getText() + "' AND mot_de_passe = '" + mdpPF.getText() + "'");
-        while (rs.next()) {
-            String res=rs.getString(1); 
-            System.out.println(res);
-            if ("chercheur".equals(res)) {
-                Parent ajoutParent = FXMLLoader.load(getClass().getResource("Chercheur.fxml"));
-                Scene ajoutScene = new Scene(ajoutParent);
-                    
-                //This line gets the Stage information
-                Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+//        //FAIRE UN LABEL POUR AFFICHER UN MESSAGE D'ERREUR 
+//        if (emailTF.getText().isEmpty() == false && mdpPF.getText().isEmpty() == false) {
+//        try {
+//             Statement stmt = con.createStatement();
+//        ResultSet rs = stmt.executeQuery("SELECT fonction"
+//                + "FROM PERSONNE"
+//                + "WHERE email ='" + emailTF.getText() + "' AND mot_de_passe = '" + mdpPF.getText() + "'");
+//        while (rs.next()) {
+//            String res=rs.getString(1); 
+//            System.out.println(res);
+//            if ("chercheur".equals(res)) {
+//                Parent ajoutParent = FXMLLoader.load(getClass().getResource("Chercheur.fxml"));
+//                Scene ajoutScene = new Scene(ajoutParent);
+//                    
+//                //This line gets the Stage information
+//                Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+//
+//                window.setScene(ajoutScene);
+//                window.show();
+//            }
+//            else if ("laborantin".equals(res)){
+//                Parent ajoutParent = FXMLLoader.load(getClass().getResource("Laborantin.fxml"));
+//                Scene ajoutScene = new Scene(ajoutParent);
+//                    
+//                //This line gets the Stage information
+//                Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+//
+//                window.setScene(ajoutScene);
+//                window.show();
+//            }
+//        }
+//            
+//          } catch (SQLException e) {
+//                System.out.println(e);
+//            }  
+//        }
+        Parent ajoutParent = FXMLLoader.load(getClass().getResource("Chercheur.fxml"));
+        Scene ajoutScene = new Scene(ajoutParent);
 
-                window.setScene(ajoutScene);
-                window.show();
-            }
-            else if ("laborantin".equals(res)){
-                Parent ajoutParent = FXMLLoader.load(getClass().getResource("Laborantin.fxml"));
-                Scene ajoutScene = new Scene(ajoutParent);
-                    
-                //This line gets the Stage information
-                Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        //This line gets the Stage information
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 
-                window.setScene(ajoutScene);
-                window.show();
-            }
-        }
-            
-          } catch (SQLException e) {
-                System.out.println(e);
-            }  
-    }
+        window.setScene(ajoutScene);
+        window.show();
     }
     
-    
+    /**
+     * Methode qui permet de se connecter à la base de donnée
+     */
     public void connectServer() {
-        try {
-            //step1 load the driver class  
-            Class.forName("oracle.jdbc.driver.OracleDriver");
-            //step2 create  the connection object  
-            con = DriverManager.getConnection(
-                    "jdbc:oracle:thin:@192.168.254.3:1521:PFPBS", "GROUPE_29", "GROUPE_29");
-            //step3 create the statement object  
-            Statement stmt = con.createStatement();
-            //step4 execute query  
-            ResultSet rs = stmt.executeQuery("select * from EXPERIENCE");
-            while (rs.next()) {
-                System.out.println(rs.getInt(1) + "  " + rs.getString(2) + "  " + rs.getString(3));
-            }
-          
-        } catch (Exception e) {
-            System.out.println(e);
-        }
+//        try {
+//            //step1 load the driver class  
+//            Class.forName("oracle.jdbc.driver.OracleDriver");
+//            //step2 create  the connection object  
+//            con = DriverManager.getConnection(
+//                    "jdbc:oracle:thin:@192.168.254.3:1521:PFPBS", "GROUPE_29", "GROUPE_29");
+//            //step3 create the statement object  
+//            Statement stmt = con.createStatement();
+//            //step4 execute query  
+//            ResultSet rs = stmt.executeQuery("select * from EXPERIENCE");
+//            while (rs.next()) {
+//                System.out.println(rs.getInt(1) + "  " + rs.getString(2) + "  " + rs.getString(3));
+//            }
+//          
+//        } catch (Exception e) {
+//            System.out.println(e);
+//        }
     }
     
     
