@@ -7,6 +7,8 @@ package projetbasededonnee;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,13 +16,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.Tab;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -40,6 +38,7 @@ public class AcceuilChercheurController implements Initializable {
     
     // Page d'accueil du chercheur
     @FXML    private AnchorPane homePageChercheur;
+    @FXML    private TableView<String> tableViewAccueil; 
     @FXML    private VBox titleAcceuil;
     @FXML    private TableColumn<?, ?> numExpCol;
     @FXML    private TableColumn<?, ?> nomExpCol;
@@ -73,6 +72,12 @@ public class AcceuilChercheurController implements Initializable {
     @FXML    private TableColumn<?, ?> plaqueCol;
     @FXML    private TableColumn<?, ?> photometreCol;
     
+    private Connection con;
+    private ConnexionController maCo;
+    private String prenom; 
+    private String nom; 
+    private ProjetBaseDeDonnee main;
+   
     /**
      * Initializes the controller class.
      * @param url
@@ -85,19 +90,22 @@ public class AcceuilChercheurController implements Initializable {
         AddUpletPage.setVisible(false);
     }      
 
+    
     /**
      * Affichage de la page de connexion (connexion.fxml)
      * @param event
      * @throws IOException 
      */
     public void deconnexionEvent(MouseEvent event) throws IOException {
+        
+        FXMLLoader loader = new FXMLLoader();
         Parent ajoutParent = FXMLLoader.load(getClass().getResource("connexion.fxml"));
         Scene ajoutSceneConn = new Scene(ajoutParent);
         
+        ConnexionController CCO= loader.getController();
+        CCO.setMain(main);
         //This line gets the Stage information
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-        
-        
         window.setScene(ajoutSceneConn);
         window.show();
     }
@@ -125,4 +133,8 @@ public class AcceuilChercheurController implements Initializable {
         AddUpletPage.setVisible(false);
     }
     
+    public void setMain(ProjetBaseDeDonnee mainPBD)
+    {
+        this.main = mainPBD;
+    }
 }

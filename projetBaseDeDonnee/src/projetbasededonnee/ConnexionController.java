@@ -35,7 +35,13 @@ public class ConnexionController implements Initializable {
     @FXML    private PasswordField mdpPF;
     @FXML    private Button connexionButton;
    
-    private Connection con; 
+    private Statement stmt; 
+    private ResultSet rs;
+    private String prenom; 
+    private String nom; 
+    private String email;
+    private Connection con;
+    private ProjetBaseDeDonnee main;
 
     /**
      * Initializes the controller class.
@@ -44,7 +50,6 @@ public class ConnexionController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-//        connectServer();
     }   
     
     /**
@@ -54,75 +59,79 @@ public class ConnexionController implements Initializable {
      * @throws IOException
      * @throws SQLException 
      */
-    public void connexionButton(ActionEvent event) throws IOException, SQLException
+    public void connexionButton(ActionEvent event) throws  IOException, SQLException
     {
-//        //FAIRE UN LABEL POUR AFFICHER UN MESSAGE D'ERREUR 
-//        if (emailTF.getText().isEmpty() == false && mdpPF.getText().isEmpty() == false) {
-//        try {
-//             Statement stmt = con.createStatement();
-//        ResultSet rs = stmt.executeQuery("SELECT fonction"
-//                + "FROM PERSONNE"
-//                + "WHERE email ='" + emailTF.getText() + "' AND mot_de_passe = '" + mdpPF.getText() + "'");
-//        while (rs.next()) {
-//            String res=rs.getString(1); 
-//            System.out.println(res);
-//            if ("chercheur".equals(res)) {
-//                Parent ajoutParent = FXMLLoader.load(getClass().getResource("Chercheur.fxml"));
-//                Scene ajoutScene = new Scene(ajoutParent);
-//                    
-//                //This line gets the Stage information
-//                Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-//
-//                window.setScene(ajoutScene);
-//                window.show();
-//            }
-//            else if ("laborantin".equals(res)){
-//                Parent ajoutParent = FXMLLoader.load(getClass().getResource("Laborantin.fxml"));
-//                Scene ajoutScene = new Scene(ajoutParent);
-//                    
-//                //This line gets the Stage information
-//                Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-//
-//                window.setScene(ajoutScene);
-//                window.show();
-//            }
-//        }
-//            
-//          } catch (SQLException e) {
-//                System.out.println(e);
-//            }  
-//        }
-        Parent ajoutParent = FXMLLoader.load(getClass().getResource("Laborantin.fxml"));
-        Scene ajoutScene = new Scene(ajoutParent);
 
-        //This line gets the Stage information
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+            //FAIRE UN LABEL POUR AFFICHER UN MESSAGE D'ERREUR 
+        if (emailTF.getText().isEmpty() == false && mdpPF.getText().isEmpty() == false) {
+        try {
+            stmt = con.createStatement();
+            rs = stmt.executeQuery("SELECT fonction, PRENOM, NOM, EMAIL FROM PERSONNE WHERE email ='" + emailTF.getText() + "' AND mot_de_passe = '" + mdpPF.getText() + "'");
+            while (rs.next()) {
+                String res=rs.getString(1); 
+                prenom= rs.getString(2);
+                nom=rs.getString(2);
+                email=rs.getString(3);
+                
+                //ajout le nom, prénom, email et fonction à la personne connecté
+                main.getPersonne().setPrenom(prenom);
+                main.getPersonne().setNom(nom);
+                main.getPersonne().setEmail(email);
+                main.getPersonne().setFonction(res);
+                
+                if ("chercheur".equals(res)) {
+                    FXMLLoader loader = new FXMLLoader();
+                    Parent ajoutParent = loader.load(getClass().getResource("Chercheur.fxml"));
+                    Scene ajoutScene = new Scene(ajoutParent);
+                    
+                    AcceuilChercheurController ACCo = loader.getController();
+                    ACCo.setMain(main);
+ 
+                    
+                    //This line gets the Stage information
+                    Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 
-        window.setScene(ajoutScene);
-        window.show();
+                    window.setScene(ajoutScene);
+                    window.show();
+                }
+                else if ("laborantin".equals(res)){
+                    FXMLLoader loader = new FXMLLoader();
+                    Parent ajoutParent = loader.load(getClass().getResource("Laborantin.fxml"));
+                    Scene ajoutScene = new Scene(ajoutParent);
+                    
+                    LaborantinController LCO = loader.getController();
+                    LCO.setMain(main);
+                    
+                    //This line gets the Stage information
+                    Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+                    window.setScene(ajoutScene);
+                    window.show();
+                }
+            }
+          
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        }
+ 
     }
+//        Parent ajoutParent = FXMLLoader.load(getClass().getResource("Laborantin.fxml"));
+//        Scene ajoutScene = new Scene(ajoutParent);
+//
+//        //This line gets the Stage information
+//        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+//
+//        window.setScene(ajoutScene);
+//        window.show();
+    
     
     /**
-     * Methode qui permet de se connecter à la base de donnée
+     * 
+     * @param MainBDD 
      */
-    public void connectServer() {
-//        try {
-//            //step1 load the driver class  
-//            Class.forName("oracle.jdbc.driver.OracleDriver");
-//            //step2 create  the connection object  
-//            con = DriverManager.getConnection(
-//                    "jdbc:oracle:thin:@192.168.254.3:1521:PFPBS", "GROUPE_29", "GROUPE_29");
-//            //step3 create the statement object  
-//            Statement stmt = con.createStatement();
-//            //step4 execute query  
-//            ResultSet rs = stmt.executeQuery("select * from EXPERIENCE");
-//            while (rs.next()) {
-//                System.out.println(rs.getInt(1) + "  " + rs.getString(2) + "  " + rs.getString(3));
-//            }
-//          
-//        } catch (Exception e) {
-//            System.out.println(e);
-//        }
+    public void setMain(ProjetBaseDeDonnee main) {
+        this.main = main;
     }
     
     
