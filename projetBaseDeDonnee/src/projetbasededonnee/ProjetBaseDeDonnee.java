@@ -44,7 +44,7 @@ public class ProjetBaseDeDonnee extends Application {
         Scene scene = new Scene(root);
         
         //CREER UN OBJECT PERSONNE 
-        pers= new Personne("0", "0", "0", "0");
+        //pers= new Personne("0", "0", "0", "0");
         
         primaryStage.setScene(scene);
         primaryStage.show();

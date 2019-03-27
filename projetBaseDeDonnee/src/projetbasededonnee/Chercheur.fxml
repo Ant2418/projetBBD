@@ -63,7 +63,7 @@
                <center>
                   <AnchorPane prefHeight="600.0" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane fx:id="homePageChercheur" prefHeight="600.0" prefWidth="950.0">
+                        <AnchorPane fx:id="homePageChercheur" prefHeight="600.0" prefWidth="950.0" visible="false">
                            <children>
                               <BorderPane prefHeight="600.0" prefWidth="950.0">
                                  <center>
@@ -175,7 +175,7 @@
                                  </bottom>
                               </BorderPane>
                            </children></AnchorPane>
-                        <AnchorPane fx:id="AddUpletPage" prefHeight="600.0" prefWidth="950.0" visible="false">
+                        <AnchorPane fx:id="AddUpletPage" prefHeight="600.0" prefWidth="950.0">
                            <children>
                               <BorderPane prefHeight="600.0" prefWidth="950.0">
                                  <top>
@@ -248,13 +248,11 @@
                                           </GridPane>
                                           <TableView fx:id="tableNUplet" prefHeight="99.0" prefWidth="630.0" GridPane.rowIndex="2">
                                              <columns>
-                                                <TableColumn fx:id="replicatCol" prefWidth="75.0" text="Réplicat" />
-                                                <TableColumn fx:id="agentBioCol" prefWidth="83.0" text="   Agent&#10;biologique" />
-                                                <TableColumn fx:id="qteAgentBioCol" prefWidth="124.33334350585938" text="        Quantité&#10;d'agent biologique" />
-                                                <TableColumn fx:id="typeCellCol" prefWidth="100.66668701171875" text="Type de cellule" />
-                                                <TableColumn fx:id="qteCellCol" prefWidth="78.66668701171875" text="Quantité&#10;de cellule" />
-                                                <TableColumn fx:id="plaqueCol" prefWidth="77.3333740234375" text="Plaque" />
-                                                <TableColumn fx:id="photometreCol" prefWidth="86.33331298828125" text="Photomètre" />
+                                                <TableColumn fx:id="replicatCol" prefWidth="79.0" text="Réplicat" />
+                                                <TableColumn fx:id="agentBioCol" prefWidth="163.0" text="   Agent&#10;biologique" />
+                                                <TableColumn fx:id="qteAgentBioCol" prefWidth="139.0" text="        Quantité&#10;d'agent biologique" />
+                                                <TableColumn fx:id="typeCellCol" prefWidth="162.0" text="Type de cellule" />
+                                                <TableColumn fx:id="qteCellCol" prefWidth="86.0" text="Quantité&#10;de cellule" />
                                              </columns>
                                              <GridPane.margin>
                                                 <Insets bottom="10.0" left="160.0" right="160.0" top="10.0" />
