@@ -169,10 +169,12 @@ public class LaborantinController implements Initializable {
     public void deconnexionEvent(MouseEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         Parent ajoutParent = FXMLLoader.load(getClass().getResource("connexion.fxml"));
-        Scene ajoutSceneConn = new Scene(ajoutParent);
+        
         
         ConnexionController CCO= loader.getController();
-        CCO.setMain(main);
+        //CCO.setMain(main);
+        
+        Scene ajoutSceneConn = new Scene(ajoutParent);
         //This line gets the Stage information
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(ajoutSceneConn);
@@ -235,7 +237,7 @@ public class LaborantinController implements Initializable {
     
     public void setMain(ProjetBaseDeDonnee mainPBD)
     {
-        this.main = mainPBD;
+        main = mainPBD;
     }
     
 }

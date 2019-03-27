@@ -26,13 +26,13 @@ public class Connexion {
             con = DriverManager.getConnection(
                     "jdbc:oracle:thin:@192.168.254.3:1521:PFPBS", "GROUPE_29", "GROUPE_29");
             //step3 create the statement object  
-            Statement stmt = con.createStatement();
-            //step4 execute query  
-            ResultSet rs = stmt.executeQuery("select * from EXPERIENCE");
-            while (rs.next()) {
-                System.out.println(rs.getInt(1) + "  " + rs.getString(2) + "  " + rs.getString(3));
-            }
-          
+//            Statement stmt = con.createStatement();
+//            //step4 execute query  
+//            ResultSet rs = stmt.executeQuery("select * from EXPERIENCE");
+//            while (rs.next()) {
+//                System.out.println(rs.getInt(1) + "  " + rs.getString(2) + "  " + rs.getString(3));
+//            }
+//          
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -41,7 +41,7 @@ public class Connexion {
      * 
      * @return 
      */
-    public Connection getConnection(){
+    public Connection getCon(){
         return con;
         
     }

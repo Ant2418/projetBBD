@@ -100,10 +100,12 @@ public class AcceuilChercheurController implements Initializable {
         
         FXMLLoader loader = new FXMLLoader();
         Parent ajoutParent = FXMLLoader.load(getClass().getResource("connexion.fxml"));
-        Scene ajoutSceneConn = new Scene(ajoutParent);
+        
         
         ConnexionController CCO= loader.getController();
         CCO.setMain(main);
+        
+        Scene ajoutSceneConn = new Scene(ajoutParent);
         //This line gets the Stage information
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(ajoutSceneConn);
@@ -135,6 +137,6 @@ public class AcceuilChercheurController implements Initializable {
     
     public void setMain(ProjetBaseDeDonnee mainPBD)
     {
-        this.main = mainPBD;
+        main = mainPBD;
     }
 }

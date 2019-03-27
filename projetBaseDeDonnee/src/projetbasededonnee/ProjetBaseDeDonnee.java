@@ -19,30 +19,32 @@ import javafx.stage.Stage;
  */
 public class ProjetBaseDeDonnee extends Application {
     
-    private String nom; 
-    private String prenom;
-    private String email; 
-    private String fonction; 
-    private Connection con; 
-    private Personne pers; 
+//    private String nom; 
+//    private String prenom;
+//    private String email; 
+//    private String fonction; 
+//    private Connection con; 
+    private Personne pers;
+    private Connexion maCo; 
     
     @Override
     public void start(Stage primaryStage) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         Parent root = loader.load(getClass().getResource("connexion.fxml"));
-        Scene scene = new Scene(root);
+        
         
         // permet de faire la connection et de la stocker dans l'appli
-        Connexion maCo = new Connexion();
-        con = maCo.getConnection();
+        maCo = new Connexion();
+        //con = maCo.getConnection();
         
         // Permet d'associer ton controleur à page à charger pour faire le lien
         ConnexionController coCo = loader.getController();
-        coCo.setMain(this);
+        //coCo.setMain(this);
         
+        Scene scene = new Scene(root);
         
         //CREER UN OBJECT PERSONNE 
-        pers= new Personne(null, null, null, null);
+        pers= new Personne("0", "0", "0", "0");
         
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -58,6 +60,10 @@ public class ProjetBaseDeDonnee extends Application {
     
     public Personne getPersonne(){
         return pers; 
+    }
+    
+    public Connexion getConnect(){
+        return maCo; 
     }
 
 }
