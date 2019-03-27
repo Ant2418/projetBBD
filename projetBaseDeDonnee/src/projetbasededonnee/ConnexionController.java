@@ -61,23 +61,29 @@ public class ConnexionController implements Initializable {
      */
     public void connexionButton(ActionEvent event) throws  IOException, SQLException
     {
-
+        System.out.println("avant");        
             //FAIRE UN LABEL POUR AFFICHER UN MESSAGE D'ERREUR 
         if (emailTF.getText().isEmpty() == false && mdpPF.getText().isEmpty() == false) {
         try {
-            stmt = main.getConnect().getCon().createStatement();
-            rs = stmt.executeQuery("SELECT fonction, PRENOM, NOM, EMAIL FROM PERSONNE WHERE email ='" + emailTF.getText() + "' AND mot_de_passe = '" + mdpPF.getText() + "'");
+            
+            Connexion connect = new Connexion(); 
+            System.out.println("avant");
+            con = connect.getCon();
+            System.out.println("avant");
+            stmt = con.createStatement();
+            System.out.println("apres");
+            rs = stmt.executeQuery("SELECT FONCTION, PRENOM, NOM, EMAIL FROM PERSONNE WHERE email ='" + emailTF.getText() + "' AND mot_de_passe = '" + mdpPF.getText() + "'");
             while (rs.next()) {
                 String res=rs.getString(1); 
-                prenom= rs.getString(2);
-                nom=rs.getString(3);
-                email=rs.getString(4);
+//                prenom= rs.getString(2);
+//                nom=rs.getString(3);
+//                email=rs.getString(4);
 //                
                 //ajout le nom, prénom, email et fonction à la personne connecté
-                main.getPersonne().setPrenom(prenom);
-                main.getPersonne().setNom(nom);
-                main.getPersonne().setEmail(email);
-                main.getPersonne().setFonction(res);
+//                main.getPersonne().setPrenom(prenom);
+//                main.getPersonne().setNom(nom);
+//                main.getPersonne().setEmail(email);
+//                main.getPersonne().setFonction(res);
                 
                 if ("chercheur".equals(res)) {
                     FXMLLoader loader = new FXMLLoader();
